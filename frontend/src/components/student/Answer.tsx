@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const Answer = ({ id }: { id: string }) => {
     const [row, setRow] = useState<any>({});
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/problem/${id}`, {
+        fetch(`${BACKEND_URL}/problem/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

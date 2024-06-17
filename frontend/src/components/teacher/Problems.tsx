@@ -69,7 +69,7 @@ const Problems = () => {
     const value: any = rows.find((row: any) => row.id === selected_key);
 
     if (value) {
-      fetch(BACKEND_URL+'delete/', {
+      fetch(BACKEND_URL+'/delete/', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,7 @@ const Problems = () => {
   };
 
   useEffect(() => {
-    fetch(BACKEND_URL+'teacher/problems', {
+    fetch(BACKEND_URL+'/teacher/problems', {
         method: "GET",
         headers:  {
             "Content-Type": "application/json",

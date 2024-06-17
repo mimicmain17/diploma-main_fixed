@@ -15,7 +15,7 @@ const SigninTeacherPage = () => {
 
     let isRegistered = false;
     
-    fetch(BACKEND_URL+"register/teacher/", {
+    fetch(BACKEND_URL+"/register/teacher/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const SigninTeacherPage = () => {
     })
 
     if (isRegistered) {
-      fetch(BACKEND_URL+"login/teacher/", {
+      fetch(BACKEND_URL+"/login/teacher/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -68,7 +68,7 @@ const Problems = () => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    fetch(BACKEND_URL + "student/problems", {
+    fetch(BACKEND_URL + "/student/problems", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

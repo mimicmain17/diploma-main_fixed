@@ -14,7 +14,7 @@ const SigninStudentPage = () => {
     const name = data.get("fullname");
     const faculty = data.get("faculty");
     
-    fetch(BACKEND_URL+"register/student/", {
+    fetch(BACKEND_URL+"/register/student/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

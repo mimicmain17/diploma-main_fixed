@@ -1,4 +1,5 @@
 "use client";
+import { BACKEND_URL } from "@/utils/urls";
 import { Button, Link } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 const Header = ({ backUrl }: { backUrl?: string }) => {
@@ -6,7 +7,7 @@ const Header = ({ backUrl }: { backUrl?: string }) => {
   const [teacher, setTeacher] = useState<any>({});
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/user/", {
+    fetch(BACKEND_URL+"/user/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

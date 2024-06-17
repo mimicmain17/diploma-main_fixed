@@ -26,7 +26,7 @@ const Answers = ({ id }: { id: number }) => {
     const selected_key = selectedKey?.values().next().value;
     const value: any = rows.find((row: any) => row.id === selected_key);
     if (value) {
-      fetch(BACKEND_URL + `answer/check/`, {
+      fetch(BACKEND_URL + `/answer/check/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Answers = ({ id }: { id: number }) => {
   };
 
   useEffect(() => {
-    fetch(BACKEND_URL + `answer/${id}/`, {
+    fetch(BACKEND_URL + `/answer/${id}/`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -150,7 +150,7 @@ const Answers = ({ id }: { id: number }) => {
                 </RadioGroup>
               </TableCell>
               <TableCell>
-                <Link href={BACKEND_URL + item.file} download={item.file}>
+                <Link href={BACKEND_URL + "/"+item.file} download={item.file}>
                   {item.file}
                 </Link>
               </TableCell>

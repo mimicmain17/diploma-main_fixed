@@ -78,7 +78,7 @@ const Solving = ({ row }: { row: any }) => {
                     <h1 className="text-xl font-semibold">Ваш ответ</h1>
                     <p>{answer?.text}</p>
                     {
-                        answer.file &&<Link href={BACKEND_URL+answer?.file} download={answer?.file}>
+                        answer.file &&<Link href={BACKEND_URL+"/"+answer?.file} download={answer?.file}>
                         Ссылка на файл
                     </Link>
                     }

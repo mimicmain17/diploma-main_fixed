@@ -21,6 +21,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { columns } from "./Problems";
 import faculties, { getKeyValue } from "@/utils/faculties";
+import { BACKEND_URL } from "@/utils/urls";
 
 const CreateProblemForm = () => {
   const [students, setStudents] = useState([]);
@@ -33,7 +34,7 @@ const CreateProblemForm = () => {
   const [student, setStudent] = useState<any>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/students/")
+    fetch(BACKEND_URL+"/students/")
       .then(async (res) => await res.json())
       .then((data) => {
         setStudents(data);
@@ -57,7 +58,7 @@ const CreateProblemForm = () => {
     body.append("comment", comment)
     body.append("theme", theme)
     body.append("file", file as any)
-    fetch("http://127.0.0.1:8000/problem/create/", {
+    fetch(BACKEND_URL+"/problem/create/", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
