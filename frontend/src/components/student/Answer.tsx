@@ -1,4 +1,5 @@
 "use client";
+import { BACKEND_URL } from "@/utils/urls";
 import Solving from "./Answer/Solving";
 import Header from "./Header";
 import Problem from "./Problem";
