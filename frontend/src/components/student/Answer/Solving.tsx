@@ -16,7 +16,7 @@ const Solving = ({ row }: { row: any }) => {
         if (file) body.append("file", file as any);
         body.append("id", id);
         body.append("problem", row.id);
-        const res = await fetch("http://localhost:8000/answer/create/", {
+        const res = await fetch(BACKEND_URL+"/answer/create/", {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
